@@ -1,0 +1,9 @@
+These files contained in this folder can be imported into the VBA Developer environment (Developer Tab)
+and used to help you in some of the formatting of the tables that you will output in Stata. 
+
+Most of the files I write take the form of: 
+	- I write a sub procedure 
+	- I write another sub procedure that calls the first one. 
+
+In this way the procedures that do the actual work are re-usable, you simply pass the procedure the parameters you 
+need for the table you are formatting. 
