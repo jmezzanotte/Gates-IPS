@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS {table_name}{funding_year}_Item{item};
+CREATE TABLE {table_name}{funding_year}_Item{item} AS
+SELECT '{name_of_lever}' AS Name, funding_year, SUM(CAT1) * {lever_prop} AS CAT1, SUM(CAT2) * {lever_prop} AS CAT2, SUM(CAT3) * {lever_prop} AS CAT3, SUM(CAT4) * {lever_prop} AS CAT4, 
+flag4a, flag4b
+FROM (
+        SELECT lever_number, lever, funding_year, CAT1, CAT2, (CAT3_III + CAT3_Recovery) AS CAT3, (Other + Unfunded) AS CAT4, 
+	flag4a, flag4b
+        FROM {site}_year{funding_year}
+     )
+WHERE 

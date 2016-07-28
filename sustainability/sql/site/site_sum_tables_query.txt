@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS {final_table}{funding_year};
+CREATE TABLE {final_table}{funding_year} AS 
+SELECT Name, Funding_year, SUM(CAT1) AS CAT1, SUM(CAT2) AS CAT2, SUM(CAT3) AS CAT3, SUM(CAT4) AS CAT4
+FROM (
+        {tables_to_stack}
+      );
+
